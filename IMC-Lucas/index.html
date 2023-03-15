@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC para homens de signo touro</title>
+    <link rel="stylesheet" href="./css/D.css">
+
+</head>
+<body>
+    <h1>IMC DE HOMENS DE SIGNO TOURO</h1>
+    <h2>IDADE 45 ANOS</h2>
+    
+    <div class="calculadora">
+        Coloque seu peso em Kilogramas:<input type="number" id="peso"><br>
+        Coloque sua altura Metros:<input type="number" id="altura"><br>
+      
+        <input type="submit" value="Calcular" id="botao" onclick="calcular()">
+        <h3 id="resultado"></h3>
+
+    </div>
+
+        <div id="abaixo" class="imc"><h3>Se seu imc for menor que 18,5, você está muito abaixo do peso.</h3></div>
+        <div id="abaixo" class="imc"><h3>Se seu imc for entre 18.5 até 26, você está na média ou quase nela.</h3></div>
+        <div id="abaixo" class="imc"><h3>Se seu imc for maior que 26, você está acima ou muito acima do peso.</h3></div>
+
+    <script>
+        var altura = document.getElementById('altura')
+        var peso = document.getElementById('peso')
+        var botao = document.getElementById('botao')
+        var resultado = document.getElementById('resultado')
+
+        function calcular () {
+
+            let valorAltura = altura.value
+            let valorPeso = peso.value
+
+            Number(valorAltura)
+            Number(valorPeso)
+
+            console.log(valorAltura)
+            console.log(valorPeso)
+
+            let conta =( valorPeso / (valorAltura *valorAltura))
+
+            conta = conta.toFixed(2);
+
+            resultado.innerHTML = 'Seu IMC ' + conta
+        }
+    </script>
+</body>
+</html>
